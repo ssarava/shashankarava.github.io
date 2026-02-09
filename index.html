@@ -34,7 +34,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-content">
-                <div class="logo">Shashank Arava</div>
+                <div class="logo"><a href="#home">Shashank Arava</a></div>
 
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home" class="nav-link">Home</a></li>
@@ -99,8 +99,7 @@
     <section id="about" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>A Bit About Me</h2>
-                <!-- <p>Get to know more about my background and expertise</p> -->
+                <h2><span class="about-me-type"></span></h2>
             </div>
 
             <div class="about-content">
@@ -130,24 +129,6 @@
                     </p>
                 </div>
                 <img class="banff" src="images/shashank_banff.jpeg" />
-                <!-- <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Technologies</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">1M+</span>
-                        <span class="stat-label">Users Impacted</span>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -156,7 +137,7 @@
     <section id="music" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Beats <span class="beats-type"></span></h2>
+                <h2><span class="beats-type"></span></h2>
                 <p>A Few Albums From My Personal Favorites</p>
             </div>
 
@@ -220,8 +201,7 @@
     <section id="projects" class="section">
         <div class="container">
             <div class="section-header">
-                <!-- <h2>Featured Projects</h2> -->
-                 <h2> <span class="featured-projects"></span></h2>
+                <h2><span class="featured-projects"></span></h2>
                 <p>Some of my recent work and personal projects</p>
             </div>
 
@@ -374,21 +354,21 @@
     <section id="experience" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Work Experience</h2>
+                <h2><span class="work-experience"></span></h2>
                 <p>My professional journey and key accomplishments</p>
             </div>
 
             <div class="experience-timeline">
                 <!-- Experience 1 -->
                 <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="experience-content">
+                    <div class="timeline-dot first-dot"></div>
+                    <div class="experience-content first-experience">
                         <div class="experience-header">
                             <h3>Biostatistics Software Intern</h3>
-                            <div class="experience-company">Harmony Biosciences</div>
+                            <div class="experience-company"><a class="experience-company-link" href="https://www.harmonybiosciences.com/" target="_blank">Harmony Biosciences</a></div>
                             <div class="experience-meta">
-                                <span><i class="far fa-calendar"></i>May 2025 - Aug 2025</span>
-                                <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                                <span class="work-dates"><i class="far fa-calendar"></i>May 2025 - Aug 2025</span>
+                                <span class="work-dates"><i class="fas fa-map-marker-alt"></i> Remote</span>
                             </div>
                         </div>
 
@@ -420,14 +400,14 @@
 
                 <!-- Experience 2 -->
                 <div class="experience-item">
-                    <div class="timeline-dot"></div>
-                    <div class="experience-content">
+                    <div class="timeline-dot second-dot"></div>
+                    <div class="experience-content second-experience">
                         <div class="experience-header">
                             <h3>Software Development Intern</h3>
-                            <div class="experience-company">Akira Technologies</div>
+                            <div class="experience-company"><a class="experience-company-link" href="https://www.akira-tech.com/" target="_blank">Akira Technologies</a></div>
                             <div class="experience-meta">
-                                <span><i class="far fa-calendar"></i>Aug 2024 - May 2025</span>
-                                <span><i class="fas fa-map-marker-alt"></i>Washington D.C.</span>
+                                <span class="work-dates"><i class="far fa-calendar"></i>Aug 2024 - May 2025</span>
+                                <span class="work-dates"><i class="fas fa-map-marker-alt"></i>Washington D.C.</span>
                             </div>
                         </div>
 
@@ -462,21 +442,13 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <!-- <p>Let's work together on your next project</p> -->
-                <span class="reach-out">
-                    <!-- I'm always open to discussing new projects, creative ideas, and opportunities. -->
-                    I'm always open to collaborations, discussions, and other opportunities.
-                </span>
+                <h2><span class="get-in-touch"></span></h2>
+                <p>
+                    I'm always open to collaborations and other opportunities.
+                </p>
             </div>
 
             <div class="contact-content">
-                <!-- <h3>Let's Create Something Amazing</h3>
-                <p>
-                    I'm always open to discussing new projects, creative ideas, or opportunities
-                    to be part of your vision. Feel free to reach out!
-                </p> -->
-
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -510,33 +482,52 @@
     <script src="code.js"></script>
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
     <script>
+        const aboutMeTyped = new Typed(".about-me-type",
+            {strings: ["A Bit About Me"],
+                typeSpeed: 100,
+                backSpeed: 75,
+                loop: false,
+            }
+        )
+
         const musicTyped = new Typed(".beats-type",
-            {strings: ["On Repeat", 
+            {strings: ["Beats On Repeat", 
             // "That Are Just Sweet", 
-            "That Can't Be Beat", "- Some Musical Feats"],
+            "Beats That Can't Be Beat", "Musical Beats, Musical Feats"],
                 typeSpeed: 100,
                 backSpeed: 75,
                 loop: true,
             }
         )
-        // const welcomeTyped = new Typed(".welcome-typed",
-        //     {strings: ["Welcome to my portfolio"],
-        //         typeSpeed: 100,
-        //         // backSpeed: 50,
-        //         loop: false,
-        //     }
-        // )
-        // TODO
 
         const featuredProjects = new Typed(".featured-projects",
-            {strings: ["Featured Projects", "Check Them Out"],
-                typeSpeed: 70,
+            {strings: ["My Featured Projects", "Check Them Out"],
+                typeSpeed: 100,
                 backSpeed: 75,
                 backDelay: 1000,
                 loop: true,
             }
         )
+
+        const workExperience = new Typed(".work-experience",
+            {strings: ["Work Experience"],
+                typeSpeed: 100,
+                backSpeed: 75,
+                backDelay: 1000,
+                loop: false,
+            }
+        )
+
+        const getInTouch = new Typed(".get-in-touch",
+            {strings: ["Get In Touch"],
+                typeSpeed: 100,
+                backSpeed: 75,
+                backDelay: 1000,
+                loop: false,
+            }
+        )
     </script>
+    <script src="particles.js-master/particles.js"></script>
 </body>
 
 </html>

@@ -5,6 +5,19 @@
   box-sizing: border-box;
 }
 
+/* html {
+  --s: 200px;
+  --c1: #291e29;
+  --c2: #2f2c30;
+  --c3: #2d272f;
+  
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+  background-size: var(--s) calc(var(--s)*tan(30deg));
+} */
+
 :root {
   /* Colors */
   --primary-color: #6366f1;
@@ -15,7 +28,6 @@
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
   --border-color: #1f1f2e;
-  --turquoise: #00ffff;
   --card-bg: #13131a;
 
   /* Gradients */
@@ -173,17 +185,14 @@ body {
 }
 
 .banff:hover {
+  filter: drop-shadow(0 0 10px turquoise);
   transform: scale(1.05);
-}
-
-.reach-out {
-  font-size: 20px;
 }
 
 .album {
   max-width: 90%;
   height: auto;
-  /* filter: drop-shadow(0 0 10px var(--primary-color)); */
+  /* border: 1px solid var(--primary-color); */
   filter: drop-shadow(0 0 10px var(--primary-color));
   border-radius: 10%;
   transition: transform 0.3s ease-out;
@@ -192,7 +201,8 @@ body {
 .album:hover {
   transform: scale(1.1);
   transition: all var(--transition-normal);
-  filter: drop-shadow(0 0 10px var(--turquoise));
+  /* border: 1px solid turquoise; */
+  filter: drop-shadow(0 0 10px turquoise);
   transform: translateY(-5px) scale3d(1.1, 1.1, 1);
 }
 
@@ -273,8 +283,8 @@ body {
 }
 
 .umd:hover {
-  color: var(--secondary-color);
-  /* text-decoration: none; */
+  color: turquoise;
+  filter: drop-shadow(0 0 5px turquoise);
 }
 
 .intro-content {
@@ -365,8 +375,18 @@ body {
   border: 2px solid var(--border-color);
 }
 
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
 .inspo {
   color: var(--primary-color);
+}
+
+.inspo:hover {
+  color: turquoise;
+  filter: drop-shadow(0 0 5px turquoise);
 }
 
 .social-links a:hover {
@@ -514,19 +534,41 @@ body {
 
 .project-card {
   background: var(--card-bg);
-  border: 1px solid var(--border-color);
   border-radius: 16px;
   overflow: hidden;
   transition: all var(--transition-normal);
+  /* border: 1px solid var(--border-color); */
   filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
 .project-card:hover {
-  border-color: var(--primary-color);
   box-shadow: 0 15px 50px rgba(99, 102, 241, 0.15);
   transform: rotate(45deg);
-  filter: drop-shadow(0 0 5px var(--turquoise));
-  transform: translateY(-8px);  
+  /* border: 1px solid turquoise; */
+  filter: drop-shadow(0 0 10px turquoise);
+  transform: translateY(-8px);
+}
+
+.project-card:hover .tech-tag {
+  color: turquoise;
+  border: 1px solid turquoise;
+}
+
+.project-card:hover li {
+  color: var(--text-primary);
+}
+
+.project-card:hover p {
+  color: var(--text-primary);
+}
+
+.project-card:hover li::before {
+  color: turquoise;
+}
+
+.project-card:hover .project-link {
+  border: 1px solid turquoise;
+  color: turquoise;
 }
 
 .project-image {
@@ -539,7 +581,6 @@ body {
 .project-image {
   transform: scale(1.05);
 }
-
 
 .project-content {
   padding: 1.5rem;
@@ -571,6 +612,17 @@ body {
   border-radius: 12px;
   font-size: 0.8rem;
   color: var(--secondary-color);
+  transition: transform 0.3s ease-out;
+}
+
+.tech-tag:hover {
+  /* color: turquoise; */
+  transform: translateY(-5px);
+  /* border: 1px solid turquoise; */
+  /* filter: drop-shadow(0 0 5px turquoise) */
+  background: rgb(68, 86, 84);
+
+  color: white;
 }
 
 .project-highlights {
@@ -606,18 +658,19 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  color: var(--primary-color);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  color: var(--secondary-color);
   text-decoration: none;
   font-size: 1rem;
   transition: all var(--transition-normal);
 }
 
 .project-link:hover {
-  background: var(--primary-color);
+  background: rgb(68, 86, 84);
   color: white;
+  transform: scale(1.05);
 }
 
 /* Experience Section */
@@ -647,6 +700,7 @@ body {
   background: var(--gradient-1);
   border-radius: 50%;
   border: 3px solid var(--bg-dark);
+  transition: all var(--transition-normal);
 }
 
 .experience-content {
@@ -655,11 +709,74 @@ body {
   border-radius: 16px;
   padding: 2rem;
   transition: all var(--transition-normal);
+  filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
 .experience-content:hover {
-  border-color: var(--primary-color);
+  filter: drop-shadow(0 0 10px turquoise);
+  transform: translateY(-5px);
   box-shadow: 0 10px 40px rgba(99, 102, 241, 0.1);
+}
+
+.experience-item:hover .experience-company {
+  color: turquoise;
+}
+
+.experience-item:hover .experience-company-link {
+  color: turquoise;
+}
+
+.experience-item:hover li::before {
+  color: turquoise;
+}
+
+.experience-item:hover .tech-tag {
+  color: turquoise;
+  border: 1px solid turquoise;
+}
+
+.experience-item:hover li {
+  color: var(--text-primary);
+}
+
+.experience-item:hover .experience-description {
+  color: var(--text-primary);
+}
+
+.experience-item:hover .work-dates {
+  color: var(--text-primary);
+}
+
+body:has(.first-experience:hover) .first-dot {
+  background: turquoise;
+  transform: scale(0.9);
+  border: 3px solid turquoise;
+  filter: drop-shadow(0 0 10px turquoise);
+}
+
+.timeline-dot:hover {
+  background: turquoise;
+  transform: scale(0.9);
+  border: 3px solid turquoise;
+  filter: drop-shadow(0 0 10px turquoise);
+}
+
+body:has(.first-dot:hover) .first-experience {
+  filter: drop-shadow(0 0 10px turquoise);
+  transform: translateY(-8px);
+}
+
+
+body:has(.second-experience:hover) .second-dot {
+  background: turquoise;
+  transform: scale(0.9);
+  border: 3px solid turquoise;
+  filter: drop-shadow(0 0 10px turquoise);
+}
+
+body:has(.second-dot:hover) .second-experience {
+  filter: drop-shadow(0 0 10px turquoise);
+  transform: translateY(-8px);
 }
 
 .experience-header {
@@ -763,13 +880,19 @@ body {
   transition: all var(--transition-normal);
   text-decoration: none;
   font-size: 1.2rem;
+  filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
 .contact-item:hover {
-  border-color: var(--primary-color);
+  filter: drop-shadow(0 0 10px turquoise);
   color: var(--text-primary);
   transform: translateY(-2px);
-  font-size: 1.2rem;
+  font-size: 1.23rem;
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.1);
+}
+
+.contact-item:hover .fa-envelope {
+  color: turquoise;
 }
 
 .contact-item i {
@@ -805,8 +928,7 @@ body {
   margin-top: 0.5rem;
 }
 
-.footer-love i {
-  color: var(--accent-color);
+i {
   animation: heartbeat 1.5s ease-in-out infinite;
 }
 
