@@ -185,11 +185,12 @@ body {
 }
 
 .banff:hover {
-  filter: drop-shadow(0 0 10px turquoise)  brightness(0.85);
+  filter: drop-shadow(0 0 10px turquoise) brightness(0.85);
   transform: scale(1.03);
 }
 
-.album, .movie {
+.album,
+.movie {
   max-width: 90%;
   height: auto;
   /* border: 1px solid var(--primary-color); */
@@ -198,7 +199,8 @@ body {
   transition: transform 0.3s ease-out;
 }
 
-.album:hover, .movie:hover {
+.album:hover,
+.movie:hover {
   transform: scale(1.1);
   transition: all var(--transition-normal);
   /* border: 1px solid turquoise; */
@@ -475,7 +477,8 @@ a {
 }
 
 /* Music Section */
-.music-grid, .movies-grid {
+.music-grid,
+.movies-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(200px, 1fr));
   /* gap: 2rem; */
@@ -577,10 +580,11 @@ a {
   transition: transform var(--transition-slow);
 }
 
-.project-image {
+.project-image,
+.gft-image,
+.geometry-image {
   transform: scale(1.05);
 }
-
 .project-content {
   padding: 1.5rem;
   padding-bottom: 1.2rem;
@@ -609,7 +613,7 @@ a {
   background: rgba(139, 92, 246, 0.1);
   border: 1px solid rgba(139, 92, 246, 0.3);
   border-radius: 12px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;    /* was 0.8 before */
   color: var(--secondary-color);
   transition: transform 0.3s ease-out;
 }
@@ -764,7 +768,6 @@ body:has(.first-dot:hover) .first-experience {
   filter: drop-shadow(0 0 10px turquoise);
   transform: translateY(-8px);
 }
-
 
 body:has(.second-experience:hover) .second-dot {
   background: turquoise;
